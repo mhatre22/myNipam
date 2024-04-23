@@ -1,0 +1,19 @@
+
+.container{
+    width: 1000px;
+    height: 800px;
+ object-fit: cover;
+ object-position: center; 
+ }
+ .homecontent{
+     position: absolute;
+     top: 30%;
+     right: 40%;
+     object-position: center;
+ 
+ 
+ }
+ .homecontent{
+     color:rgb(8, 9, 10);
+ }
+ 
