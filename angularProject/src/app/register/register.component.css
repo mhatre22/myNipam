@@ -16,4 +16,9 @@
  .homecontent{
      color:rgb(8, 9, 10);
  }
+ .err{
+
+        color: red;
+        font-size: small;
+    }
  

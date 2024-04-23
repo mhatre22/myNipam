@@ -1,45 +1,68 @@
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Register
-  </button>
-
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel"> User Registration</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-            <div>
-              <label for="name">Name</label>
-              <input type="text" id="name" formControlName="name">
-             
-              </div>
-    
-          
-            <div>
-              <label for="email">Email</label>
-              <input type="email" id="email" formControlName="email">
-             
-              </div>
-        
-          
-            <div>
-              <label for="age">Age</label>
-              <input type="number" id="age" formControlName="age">
-             
-              </div>
-    
-          
-            <button type="submit" [disabled]="registrationForm.invalid">Submit</button>
-          </form>
-          
-    
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Submit</button>
-        </div>
-    
-  
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel"> User Registration</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-----Registration Form------>
+            <div class="mb-3">
+                <form [formGroup]="registerForm" >
+                    &nbsp; <input for="formGroupExampleInput" class="form-label" type="text" placeholder="First Name" name="firstname" formControlName="firstname">
+                        &nbsp;<div class="err" *ngIf="firstname && firstname.invalid && firstname.touched"  >FirstName is required</div>
+                    
+
+                            
+
+
+
+
+                    &nbsp; <input for="formGroupExampleInput" class="form-label" type="text" placeholder="Last Name"
+                        name="lastname" formControlName="lastname"><br><br>
+
+
+
+
+                    &nbsp; <input class="form-label" type="email" placeholder="Email Id" name="email"
+                        formControlName="email"><br><br>
+
+
+
+
+                    &nbsp; <input class="form-label" type="text" placeholder="+91-7788445252" name="contact"
+                        formControlName="contact"><br><br>
+
+
+
+                    <label>Age:</label>
+                    &nbsp;<input class="form-label" type="range" placeholder="Age" name="age"
+                        formControlName="age"><br><br>
+
+
+
+                    &nbsp; <input class="form-label" type="option" placeholder="State" name="state"
+                        formControlName="state"><br><br>
+
+
+
+                    &nbsp; <input class="form-label" type="option" placeholder="Country" name="country"
+                        formControlName="country"><br><br>
+
+
+                    &nbsp; <input class="form-label" type="text" placeholder="Address" name="address"
+                        formControlName="address"><br>
+
+
+                    &nbsp; <input class="form-label" type="text" placeholder="tag" name="tag"
+                        formControlName="tag"><br><br>
+
+
+                    &nbsp; <input class="form-label" type="checkbox">all information corret<br>
+                    &nbsp; <button  type="button" (click)="register()">Register</button>&nbsp;<button type="button">Reseat</button> &nbsp;
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+            </div>
