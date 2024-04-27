@@ -36,6 +36,10 @@
         <span class="err" *ngIf="registerForm.get('contact')?.errors?.['required'] && !registerForm.get('contact')?.valid && registerForm.get('contact')?.touched">contact is required</span>
     </div>&nbsp;
     <!---Age-->
+<label for="age"> Select Age :  </label>
+    <mat-slider min="0" max="100000" step="1000" showTickMarks discrete [displayWith]="formatLabel">
+      <input  formControlName="age"  matSliderThumb>
+    </mat-slider>
     <!---State-->
     &nbsp;<div class="col-md-4">
       <select type="option" formControlName="state" class="form-control"   id="state" >
@@ -81,9 +85,33 @@
 </div>
 <!---tag-->
 
+<mat-chip-grid #chipGrid aria-label>
+  <mat-chip-row   class="display-flex" *ngFor="let tag of tags" 
+                (removed)="remove(tag)"
+                [editable]="true"
+                (edited)="edit(tag, $event)"
+                [aria-description]="'press enter to edit ' + tag.name">
+    {{tag.name}}
+    <button  matChipRemove [attr.aria-label]="'remove ' + tag.name">
+      <mat-icon>cancel</mat-icon>
+    </button>
+  </mat-chip-row>
+  <input formControlName="tag" type="text"  placeholder="tag.." class="form-control"
+         [matChipInputFor]="chipGrid"
+         [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+         [matChipInputAddOnBlur]="addOnBlur"
+         (matChipInputTokenEnd)="add($event)"/>
+         <span class="err" *ngIf="registerForm.get('tag')?.errors?.['required'] && !registerForm.get('tag')?.valid && registerForm.get('tag')?.touched"> tag is required </span>
+</mat-chip-grid><br>
+<input type="checkbox" >subscribe to newsletter&nbsp;
 
-<button  ype="button" [disabled]="!registerForm.valid" (click)="Submit()">Register</button>
-<button type="submit">Cancel</button>
+
+
+
+
+<button type="button" class="btn btn-primary" [disabled]="!registerForm.valid" (click)="Submit()" >Register</button>&nbsp;
+<button type="button" class="btn btn-light">Cancel</button>
+
    </div>
     </form>
     <!--form End-->
