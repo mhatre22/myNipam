@@ -1,8 +1,8 @@
 {
-  "userRegister": [
+  "Registration": [
     {
-      "id": "367b",
-      "image": "abc.jpg",
+      "id": "2a29",
+      "imageInput": "abc.jpg",
       "firstname": "Apeksha",
       "lastname": "Mhatre",
       "email": "test@gmail.com",
@@ -17,5 +17,8 @@
       "companyAddress1": "Mumbai",
       "companyAddress2": "Pune"
     }
+    
+    
+
   ]
 }
