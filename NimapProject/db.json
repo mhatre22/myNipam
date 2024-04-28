@@ -1,0 +1,21 @@
+{
+  "userRegister": [
+    {
+      "id": "367b",
+      "image": "abc.jpg",
+      "firstname": "Apeksha",
+      "lastname": "Mhatre",
+      "email": "test@gmail.com",
+      "age": 22,
+      "tag": "kho-kho",
+      "contact": 5569454215,
+      "country": "India",
+      "state": "Mharashtra",
+      "addressType": "Home",
+      "address1": "Pen",
+      "address2": "Bhal",
+      "companyAddress1": "Mumbai",
+      "companyAddress2": "Pune"
+    }
+  ]
+}
