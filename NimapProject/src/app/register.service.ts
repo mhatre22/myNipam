@@ -11,9 +11,11 @@ export class RegisterService {
 apiUrl= "http://localhost:3000/Registration";
   constructor(private http:HttpClient) {
    }
-   addUser(data:Register): Observable<any> {
-    return this.http.post<Register>(this.apiUrl,data);
+   addUser(data:Register):Observable<any> {
+    return this.http.post(this.apiUrl,data);
   }
-
+ userList():Observable<any>{
+  return this.http.get<Register[]>(this.apiUrl);
+}
   }
 
