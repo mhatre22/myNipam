@@ -111,7 +111,12 @@ export class AppComponent {
     companyAddress2:  ['', [Validators.required]], 
   });
 
-}
+  this.registerService.userList().subscribe(result =>{
+    this.userList = result;
+    console.log(result);
+
+  });
+  }
 onFileSelected(event: any): void {
   this.selectedFile = event.target.files[0];
 }

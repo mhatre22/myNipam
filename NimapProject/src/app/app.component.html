@@ -116,9 +116,6 @@
 <input type="checkbox" >subscribe to newsletter
 <button type="button"(click)="Submit()" class="btn btn-primary">Register</button>&nbsp;&nbsp;
 <button type="button"  class="btn btn-light">Cancel</button>&nbsp;
-
-
-
    </div>
     </form>
     <!--form End-->
@@ -126,4 +123,30 @@
     </div>
   </div>
 </div>
+<!----Display data-->
+<div class="profile">
+  <h2>User Profile</h2>
+  <table>
+      <thead>
+          <tr> 
+               <th>Profile image</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email Id</th>
+              <th>Contact</th>
+              <th>Age</th>
+              <th>Addess Type</th>
+              <th>Address</th>
+              <th>Country</th>
+              <th>State</th>
+              <th>Tag</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of userList"></tr>
+      </tbody>
+     
+  </table>
+</div>
+
 <router-outlet></router-outlet>

@@ -10,11 +10,4 @@ export class RegisterComponent {
   userList :any;
   constructor(private registerService :RegisterService){
   }
-ngOnInit(){
-  this.registerService.userList().subscribe(result =>{
-    this.userList = result;
-    console.log(result);
-
-  });
-}
 }
