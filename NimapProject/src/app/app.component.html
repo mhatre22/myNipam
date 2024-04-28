@@ -36,7 +36,7 @@
         <span class="err" *ngIf="registerForm.get('contact')?.errors?.['required'] && !registerForm.get('contact')?.valid && registerForm.get('contact')?.touched">contact is required</span>
     </div>&nbsp;
     <!---Age-->
-<label for="age"> Select Age :  </label>
+<label for="age"><h3>Select Age : </h3> </label>
     <mat-slider min="0" max="100000" step="1000" showTickMarks discrete [displayWith]="formatLabel">
       <input  formControlName="age"  matSliderThumb>
     </mat-slider>
@@ -60,7 +60,7 @@
   </div> <br>
    <!--Address-->
    <div class="col-md-4">
-    <h6><label>Address Type:</label></h6>
+    <h3><label>Address Type:</label></h3>
 <select  type="option"  formControlName="addressType" class="form-control" >
  <span class="err" *ngIf="registerForm.get('addressType')?.errors?.['required'] && !registerForm.get('addressType')?.valid && registerForm.get('addressType')?.touched">address type required </span>
   <option value="home">Home</option>
