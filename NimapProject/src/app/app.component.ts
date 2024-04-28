@@ -3,6 +3,8 @@ import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatChipEditedEvent, MatChipInputEvent } from '@angular/material/chips';
+import { RegisterService } from './register.service';
+import { Register } from './dataTypes';
 export interface Tag {
   name: string;
   tags :string;
@@ -14,8 +16,8 @@ export interface Tag {
 })
 export class AppComponent {
   formatLabel(value: number): string {
-    if (value >= 1000) {
-      return Math.round(value / 1000) + 'Age';
+    if (value >= 100) {
+      return Math.round(value / 100) + 'Age';
     }
 
     return `${value}`;
@@ -77,22 +79,21 @@ export class AppComponent {
 
 
 
+
   title = 'NimapProject';
   registerForm! : FormGroup ;
   countries: String[] = ['India', 'Canada', 'USA', 'Australia', 'America', 'Kenia']
   states: String[] = ['Maharashtra', 'Goa', 'Bihar', 'Manipur', 'Keral', 'Madhya Pradesh']
-
-
-
-
-  constructor( private fb:FormBuilder){
+  selectedFile: File | null = null;
+  addresponce:any;
+  constructor( private fb:FormBuilder, private registerService:RegisterService){
 
   }
   
   
   ngOnInit(){
   this.registerForm = this.fb.group({
-    //image: ['', [Validators.required]],
+    imageInput: ['', [Validators.required]],
     firstName: ['', [Validators.required]],
     lastName:  ['', [Validators.required]], 
   email: ['', [Validators.required, Validators.email]],
@@ -110,7 +111,17 @@ export class AppComponent {
   
 
 }
+
+onFileSelected(event: any): void {
+  this.selectedFile = event.target.files[0];
+}
+
+
 Submit(){
-  console.log(this.registerForm.value);
+console.log(this.registerForm.value);
+this.registerService.addUser(this.registerForm.value).subscribe(data=>{
+  this.addresponce = data;
+})
+
 }
 }

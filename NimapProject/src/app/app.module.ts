@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSliderModule} from '@angular/material/slider';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import {MatSliderModule} from '@angular/material/slider';
     MatChipsModule,
     MatFormFieldModule,
     MatIconModule,
+    HttpClientModule
    
   ],
   providers: [],
