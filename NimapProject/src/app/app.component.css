@@ -5,8 +5,16 @@
 .example-chip-list {
     width: 100%;
   }
-  .profile{
-    font-size: larger;
+
+
+.table{
+    text-align: left;
+  
+
+}
+
+.profile{
+ 
     text-align: center;
-    color: rgb(60, 133, 243);
+    top: 15px;
 }

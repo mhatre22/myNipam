@@ -86,8 +86,8 @@ export class AppComponent {
   states: String[] = ['Maharashtra', 'Goa', 'Bihar', 'Manipur', 'Keral', 'Madhya Pradesh']
   selectedFile: File | null = null;
   addresponce:any;
-  mesg :string | undefined 
-  userList:any;
+
+userList: undefined| Register[]
   constructor( private fb:FormBuilder, private registerService:RegisterService){
 
   }
@@ -117,15 +117,20 @@ export class AppComponent {
 
   });
   }
-onFileSelected(event: any): void {
-  this.selectedFile = event.target.files[0];
-}
+  onFileChange(event: any) {
+    const file = event.target.files[0];
+    if (file) {
+      this.registerForm.patchValue({
+        profileImage: file
+      });
+    }
+  }
 
 
-Submit(){
+onSubmit(){
 console.log(this.registerForm.value);
 this.registerService.addUser(this.registerForm.value).subscribe((data)=>{
-  this.addresponce = data;
+  this.userList = data;
 alert("User Added Successfully!!!");
 });
 
