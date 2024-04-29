@@ -1,5 +1,6 @@
 export interface Register{
-    imageInput: String,
+    id :Number,
+    imageInput: ImageData,
     firstname: String,
     lastname:String, 
     email: String,

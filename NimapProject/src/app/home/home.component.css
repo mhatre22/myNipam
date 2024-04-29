@@ -1,0 +1,31 @@
+.table{
+    text-align: left;
+    color: blueviolet;
+  
+
+}
+.table th , table td{
+    border: 1px solid rgb(244, 46, 46);
+}
+
+
+
+
+
+.container{
+    width: 1000px;
+    height: 800px;
+ object-fit: cover;
+ object-position: center; 
+ }
+ .homecontent{
+     position: absolute;
+     top: 20%;
+     right: 30%;
+     object-position: center;
+ 
+ 
+ }
+ .homecontent{
+     color:rgb(8, 9, 10);
+ }

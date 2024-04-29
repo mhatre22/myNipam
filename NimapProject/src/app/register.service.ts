@@ -17,5 +17,13 @@ apiUrl= "http://localhost:3000/Registration";
  userList():Observable<any>{
   return this.http.get<Register[]>(this.apiUrl);
 }
+
+deleList(id:Number){
+  return this.http.delete<Register>(`http://localhost:3000/Registration/${id}`)
+
+}
+getUser(id:string){
+  return this.http.get<Register>(`http://localhost:3000/Registration/${id}`)
+}
   }
 

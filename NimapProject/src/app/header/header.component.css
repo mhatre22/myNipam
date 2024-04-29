@@ -1,0 +1,22 @@
+.nav{
+  
+    display: flex;
+    justify-content: space-between;
+  
+}
+.nav h1{
+    color: blueviolet;
+    margin: 0;
+    font-size: 30px;
+}
+.nav ul{
+display:inline-flex;
+list-style-type: none;
+margin: 0;
+padding: 0;
+    }
+.nav li{
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

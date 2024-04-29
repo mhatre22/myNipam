@@ -1,5 +1,55 @@
 {
   "Registration": [
-   
+    {
+      "id": "4db7",
+      "imageInput": "C:\\fakepath\\profile1 (1).jpg",
+      "firstname": "zoya",
+      "lastname": "khan",
+      "email": "zoya@gmail.com",
+      "age": 33,
+      "tag": "Dance",
+      "contact": "98547123658",
+      "country": "America",
+      "state": "Bihar",
+      "addressType": "home",
+      "address1": "Bihar",
+      "address2": "America",
+      "companyAddress1": "",
+      "companyAddress2": ""
+    },
+    {
+      "id": "4779",
+      "imageInput": "",
+      "firstname": "",
+      "lastname": "",
+      "email": "",
+      "age": "",
+      "tag": "",
+      "contact": "",
+      "country": "",
+      "state": "",
+      "addressType": "home",
+      "address1": "",
+      "address2": "",
+      "companyAddress1": "",
+      "companyAddress2": ""
+    },
+    {
+      "id": "5805",
+      "imageInput": "",
+      "firstname": "",
+      "lastname": "",
+      "email": "",
+      "age": "",
+      "tag": "",
+      "contact": "",
+      "country": "",
+      "state": "",
+      "addressType": "home",
+      "address1": "",
+      "address2": "",
+      "companyAddress1": "",
+      "companyAddress2": ""
+    }
   ]
 }

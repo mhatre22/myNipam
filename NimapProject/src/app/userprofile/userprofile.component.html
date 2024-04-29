@@ -1,0 +1,14 @@
+<br><div class="content">
+    <h1 class="Profile"><b>User Profile</b></h1><hr>
+        <div *ngFor="let item of userList">
+          <p><img class="img" src="{{item.imageInput}}"></p><br>
+          <button type="button" class="btn btn-warning"  (click)="deleteUser(item.id)"><u>Delete</u></button>&nbsp;
+          <button type="button" class="btn btn-warning"><a class="click" routerLink="/updateuser/{{item.id}}">Update</a></button>
+          <div><h3>I'am {{item.firstname}} and I am Above {{item.age}} Years and  You can send your Email to {{item.email}} . I live  in the  State of {{item.state}} . I like to play hocky, Football and reading book And please me newsletter. Please reach to me on my {{ item.contact }} number</h3>
+            &nbsp;&nbsp;<button type="button" class="btn btn-success" ><a class="click" routerLink=""> I Agree</a></button><hr></div>
+        
+        </div>
+    
+
+  </div>
+

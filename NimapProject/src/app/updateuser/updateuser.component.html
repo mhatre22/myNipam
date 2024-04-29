@@ -1,0 +1,115 @@
+<div class="formContent">
+    
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Update User</h1>
+          
+            </div>
+            <div class="modal-body">
+              <!---RegisterForm-->
+          <form [formGroup]="registerForm" >
+            <!---image-->
+            <div>
+        <img src="../assets/img/upload.jpg" height="150" width="150"><br>
+        <a href="#">Upload image</a><br>
+        <input type="file" id="profileImage" (change)="onFileChange($event)" formControlName="imageInput">
+            </div>
+            
+            <!---first Name-->
+            &nbsp;<div class="row">
+              &nbsp;<div class="col-md-4">
+                  <input type="text"  formControlName="firstname"  class="form-control" placeholder="First Name" >
+              </div>
+              <span class="err"*ngIf="registerForm.get('firstname')?.errors?.['required'] && !registerForm.get('firstname')?.valid && registerForm.get('firstname')?.touched">firstname
+                  is required</span>
+              <!--lastname-->
+              &nbsp; &nbsp;<div class="col-md-4">
+                  <input  type="text"  formControlName="lastname"  class="form-control" placeholder="Last Name">
+                  <span class="err"*ngIf="registerForm.get('lastname')?.errors?.['required'] && !registerForm.get('lastname')?.valid && registerForm.get('lastname')?.touched">lastname is required</span>
+              </div>
+          </div><br>
+             <!---Email-->
+             <div class="col-md-4">
+              <input  type="email"  formControlName="email" class="form-control" placeholder="EmailID" >
+              <span class="err" *ngIf="registerForm.get('email')?.errors?.['required'] && !registerForm.get('email')?.valid && registerForm.get('email')?.touched">email is required</span>
+          </div><br>
+          <!--contact-->
+          <div class="col-md-4">
+              <input  type="tel" formControlName="contact"  class="form-control" placeholder="+55-66778899" >
+              <span class="err" *ngIf="registerForm.get('contact')?.errors?.['required'] && !registerForm.get('contact')?.valid && registerForm.get('contact')?.touched">contact is required</span>
+          </div>&nbsp;
+          <!---Age-->
+      <label for="age"><h3>Select Age : </h3> </label>
+          <mat-slider min="20" max="100" step="1" showTickMarks discrete [displayWith]="formatLabel">
+            <input  formControlName="age"  matSliderThumb>
+          </mat-slider>
+          <!---State-->
+          &nbsp;<div class="col-md-4">
+            <select type="option" formControlName="state" class="form-control"   id="state" >
+                <option value="">States</option>
+               <option *ngFor="let state of states" [value]="state">{{state}}</option>
+            </select>
+            <span class="err" *ngIf="registerForm.get('state')?.errors?.['required'] && !registerForm.get('state')?.valid && registerForm.get('state')?.touched">Please select state </span>
+      
+        </div><br>
+        <!---Country-->
+        <div class="col-md-4">
+            <select   type="option" formControlName="country" class="form-control" id="country" >
+                <option value="">Country</option>
+               <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+            </select>
+         <span class="err" *ngIf="registerForm.get('country')?.errors?.['required'] && !registerForm.get('country')?.valid && registerForm.get('country')?.touched">Please select country </span>
+      
+        </div> <br>
+         <!--Address-->
+         <div class="col-md-4">
+          <h3><label>Address Type:</label></h3>
+      <select  type="option"  formControlName="addressType" class="form-control" >
+       <span class="err" *ngIf="registerForm.get('addressType')?.errors?.['required'] && !registerForm.get('addressType')?.valid && registerForm.get('addressType')?.touched">address type required </span>
+        <option value="home">Home</option>
+        <option value="company">Company</option>
+      </select>
+      
+      <!-- Home Address Fields -->
+          
+      <div *ngIf="registerForm.get('addressType')?.value === 'home'"><br>
+      <input    type="text" formControlName="address1" class="form-control"  placeholder="Home Add1"><br>
+      <span class="err" *ngIf="registerForm.get('address1')?.errors?.['required'] && !registerForm.get('address1')?.valid && registerForm.get('address1')?.touched"> address is required </span>
+      
+      <input  type="text"   formControlName="address2" class="form-control" placeholder="Home Add2"><br>
+      </div>
+      <!-- Company Address Fields -->
+      
+      <div *ngIf="registerForm.get('addressType')?.value === 'company'"><br>
+      <input type="text" formControlName="companyAddress1"    class="form-control"   placeholder="Comp Add1"><br>
+      <span class="err" *ngIf="registerForm.get('companyAddress1')?.errors?.['required'] && !registerForm.get('companyAddress1')?.valid && registerForm.get('companyAddress1')?.touched"> address is required </span>
+      
+      <input  type="text" formControlName="companyAddress2" class="form-control"   placeholder="Comp Add2"><br>
+      </div>
+      <!---tag-->
+      
+      <mat-chip-grid #chipGrid aria-label>
+        <mat-chip-row   class="display-flex" *ngFor="let tag of tags" 
+                      (removed)="remove(tag)"
+                      [editable]="true"
+                      (edited)="edit(tag, $event)"
+                      [aria-description]="'press enter to edit ' + tag.name">
+          {{tag.name}}
+          <button  matChipRemove [attr.aria-label]="'remove ' + tag.name">
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-chip-row>
+        <input formControlName="tag" type="text"  placeholder="tag.." class="form-control"
+               [matChipInputFor]="chipGrid"
+               [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+               [matChipInputAddOnBlur]="addOnBlur"
+               (matChipInputTokenEnd)="add($event)"/>
+               <span class="err" *ngIf="registerForm.get('tag')?.errors?.['required'] && !registerForm.get('tag')?.valid && registerForm.get('tag')?.touched"> tag is required </span>
+      </mat-chip-grid>&nbsp;
+      <input type="checkbox" >subscribe to newsletter<br>
+         </div>
+         <button  type="submit" class="btn btn-primary" (click)="userUpdate">Update</button>&nbsp;
+         <button  type="submit" class="btn btn-light">Cancel</button>
+          </form>
+          <!--form End-->
+            </div>
+       
+    

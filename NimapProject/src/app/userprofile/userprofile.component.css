@@ -1,0 +1,22 @@
+.img{
+    width: 100px;
+    height: 100px;
+}
+.profile{
+ 
+    text-align: center;
+    top: 15px;
+    color: blueviolet;
+}
+.content{
+    height: 1000px;
+    width: 600px;
+    margin-left: 300px;
+    margin-right: 200px;
+ text-align: center;
+
+    border: 1px solid rgb(244, 46, 46);
+}
+.click{
+    color: black;
+}

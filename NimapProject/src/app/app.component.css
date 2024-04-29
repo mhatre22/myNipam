@@ -9,12 +9,21 @@
 
 .table{
     text-align: left;
+    color: blueviolet;
   
 
+}
+.table th , table td{
+    border: 1px solid rgb(244, 46, 46);
 }
 
 .profile{
  
     text-align: center;
     top: 15px;
+    color: blueviolet;
+}
+.img{
+    width: 100px;
+    height: 100px;
 }
